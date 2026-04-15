@@ -39,4 +39,11 @@ public class Maestro {
     @OneToMany(mappedBy = "maestro")
     private List<Grupo> grupos = new ArrayList<>();
 
+    public void actualizar(String nombre, String apellidoPaterno, String apellidoMaterno, String email, String telefono) {
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.email = email;
+        this.telefono = telefono;
+    }
 }

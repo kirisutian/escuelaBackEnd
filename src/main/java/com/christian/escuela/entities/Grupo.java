@@ -11,7 +11,10 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "GRUPOS")
+@Table(name = "GRUPOS", uniqueConstraints = @UniqueConstraint(
+        name = "GRUPO_CU_MA_AU_PE_UK",
+        columnNames = {"ID_CURSO", "ID_MAESTRO", "ID_AULA", "PERIODO"}
+))
 @Builder
 
 public class Grupo {
