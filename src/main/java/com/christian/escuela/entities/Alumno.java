@@ -41,4 +41,20 @@ public class Alumno {
     @Builder.Default
     @OneToMany(mappedBy = "alumno")
     private List<Inscripcion> inscripciones = new ArrayList<>();
+
+    public boolean cambioEnDatos(String nombre,String apellidoPaterno, String apellidoMaterno) {
+        return !this.nombre.equalsIgnoreCase(nombre) ||
+                !this.apellidoPaterno.equalsIgnoreCase(apellidoPaterno) ||
+                !this.apellidoMaterno.equalsIgnoreCase(apellidoMaterno);
+    }
+
+    public void actualizar(
+            String nombre, String apellidoPaterno,
+            String apellidoMaterno, String email, String matricula) {
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.email = email;
+        this.matricula = matricula;
+    }
 }
